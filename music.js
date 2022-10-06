@@ -209,3 +209,23 @@ for (let j = 0; j < positions.length; j++) {
 }
 
 console.log(distinctPositions);
+
+// which celebrity is taller//
+
+function whichTaller(celeb1, celeb2) {
+  for (i = 0; i < list.length; i++) {
+    if (list[i].name === celeb1) {
+      var height1 = list[i].height;
+    } else if (list[i].name === celeb2) {
+      var height2 = list[i].height;
+    }
+
+    if (height1 > height2) {
+      console.log(celeb1);
+    } else {
+      console.log(celeb2);
+    }
+  }
+}
+
+whichTaller("jennifer lopez", "brad pitt");
