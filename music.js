@@ -147,13 +147,15 @@ nameAndAge(list);
 
 // highest net-worth //
 
-function highestNetWorth(arr) {
-  let netWorth = [];
-
-  for (let i = 0; i < arr.length; i++) {
-    netWorth.push(arr[i].net_worth);
-  }
-  console.log(Math.max(...netWorth));
+let netWorth = [];
+for (let i = 0; i < list.length; i++) {
+  netWorth.push(list[i].net_worth);
 }
 
-highestNetWorth(list);
+let highest = netWorth[0];
+for (let i = 0; i < list.length; i++) {
+  if (netWorth[i] > highest) {
+    highest = netWorth[i];
+  }
+}
+console.log(highest);
