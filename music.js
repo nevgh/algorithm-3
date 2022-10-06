@@ -181,3 +181,13 @@ for (let i = 0; i < list.length; i++) {
 }
 
 console.log(aliveArabs);
+
+// celebs who are singers and actors //
+let singerActor = [];
+for (let i = 0; i < list.length; i++) {
+  if (list[i].occupation.includes("singer", "actor")) {
+    singerActor.push(list[i].name);
+  }
+}
+
+console.log(singerActor);
