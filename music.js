@@ -170,3 +170,14 @@ for (let i = 0; i < list.length; i++) {
 }
 
 console.log(oldCelebs);
+
+// celebs who are alive and speak arabic //
+
+let aliveArabs = [];
+for (let i = 0; i < list.length; i++) {
+  if (list[i].language === "arabic" && list[i].is_alive === true) {
+    aliveArabs.push(list[i].name);
+  }
+}
+
+console.log(aliveArabs);
