@@ -191,3 +191,21 @@ for (let i = 0; i < list.length; i++) {
 }
 
 console.log(singerActor);
+
+// females occupations//
+let femaleJobs = [];
+for (let i = 0; i < list.length; i++) {
+  if (list[i].gender === "female") {
+    femaleJobs.push(list[i].occupation);
+  }
+}
+//bonus point to remove duplicate occupations//
+let positions = femaleJobs.join().split(",");
+let distinctPositions = [];
+for (let j = 0; j < positions.length; j++) {
+  if (!distinctPositions.includes(positions[j])) {
+    distinctPositions.push(positions[j]);
+  }
+}
+
+console.log(distinctPositions);
