@@ -159,3 +159,14 @@ for (let i = 0; i < list.length; i++) {
   }
 }
 console.log(highest);
+
+// celebs older than 50 //
+
+let oldCelebs = [];
+for (let i = 0; i < list.length; i++) {
+  if (list[i].age > 50) {
+    oldCelebs.push(list[i].name);
+  }
+}
+
+console.log(oldCelebs);
