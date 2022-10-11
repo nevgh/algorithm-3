@@ -160,6 +160,19 @@ for (let i = 0; i < list.length; i++) {
 }
 console.log(highest);
 
+// highest net-worth as function //
+function findHighest(arr) {
+  let netWorth = [];
+  for (let i = 0; i < arr.length; i++) {
+    netWorth.push(arr[i].net_worth);
+  }
+
+  let highest = Math.max(...netWorth);
+  console.log(highest);
+}
+
+findHighest(list);
+
 // celebs older than 50 //
 
 let oldCelebs = [];
@@ -170,6 +183,16 @@ for (let i = 0; i < list.length; i++) {
 }
 
 console.log(oldCelebs);
+// celebs older than 50 as function //
+function oldCelebs(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].age > 50) {
+      console.log(arr[i].name);
+    }
+  }
+}
+
+oldCelebs(list);
 
 // celebs who are alive and speak arabic //
 
@@ -181,6 +204,17 @@ for (let i = 0; i < list.length; i++) {
 }
 
 console.log(aliveArabs);
+// celebs who are alive and speak arabic as function //
+
+function aliveArabs(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].language === "arabic" && arr[i].is_alive === true) {
+      console.log(arr[i].name);
+    }
+  }
+}
+
+aliveArabs(list);
 
 // celebs who are singers and actors //
 let singerActor = [];
@@ -191,6 +225,16 @@ for (let i = 0; i < list.length; i++) {
 }
 
 console.log(singerActor);
+// celebs who are singers and actors as function //
+function singerActor(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].occupation.includes("singer", "actor")) {
+      console.log(list[i].name);
+    }
+  }
+}
+
+singerActor(list);
 
 // females occupations//
 let femaleJobs = [];
@@ -209,6 +253,15 @@ for (let j = 0; j < positions.length; j++) {
 }
 
 console.log(distinctPositions);
+// females occupations as function//
+function femaleOccupations(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].gender === "female") {
+      console.log(arr[i].occupation);
+    }
+  }
+}
+femaleOccupations(list);
 
 // which celebrity is taller//
 
@@ -219,13 +272,25 @@ function whichTaller(celeb1, celeb2) {
     } else if (list[i].name === celeb2) {
       var height2 = list[i].height;
     }
-
-    if (height1 > height2) {
-      console.log(celeb1);
-    } else {
-      console.log(celeb2);
-    }
+  }
+  if (height1 > height2) {
+    console.log(celeb1);
+  } else {
+    console.log(celeb2);
   }
 }
 
 whichTaller("jennifer lopez", "brad pitt");
+// which celebrity is taller using filter //
+function whichTaller(celeb1, celeb2) {
+  let celebs = list.filter(
+    (object) => object.name == celeb1 || object.name == celeb2
+  );
+
+  if (celebs[0].height > celebs[1].height) {
+    console.log(celebs[0].name);
+  } else {
+    console.log(celebs[1].name);
+  }
+}
+whichTaller("brad pitt", "jennifer lopez");
